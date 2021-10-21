@@ -1,0 +1,37 @@
+.ryletd__buttons {
+    margin-top: 20px;
+    display: flex;
+    column-gap: 15px;
+    z-index: 9999;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    border-top-right-radius: 10px;
+    background: #333;
+    transition: 0.3s;
+    opacity: 0;
+}
+.ryletd__buttons:hover {
+    opacity: 1;
+}
+
+.ryletd__button {
+    display: block;
+    padding: 8px;
+    user-select: none;
+    outline: none;
+    border-radius: 10px;
+    background: rgba(125, 95, 255, 0.2);
+    font-weight: bold;
+    color: #fff;
+    border: 3px solid #7d5fff;
+    min-width: 40px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ryletd__active {
+    box-shadow: 0 0 4px 4px #a29bfe;
+}

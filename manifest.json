@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "Youtube Speed Buttons",
+    "description": "Youtube Speed Buttons",
+    "version": "1.0.0",
+    "icons": {
+        "128": "pictures/appicon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.youtube.com/*"],
+            "js": ["js/main.js"],
+            "css": ["css/styles.css"]
+        }
+    ],
+    "permissions": ["storage"]
+}
