@@ -1,4 +1,4 @@
-const speedPoints = ["1", "1.5", "2", "2.5", "3", "3.5", "4"];
+const speedPoints = ["1", "1.5", "2", "2.5", "3", "3.5", "4", "5"];
 
 // Кнопки переключения скорости
 let buttons = document.createElement("main");
