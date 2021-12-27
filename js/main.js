@@ -20,8 +20,8 @@ document.querySelectorAll(".ryletd__button").forEach((btn) => {
         ryletdBtns.forEach((item) => item.classList.remove("ryletd__active"));
 
         btn.classList.add("ryletd__active");
-        document.querySelector("video").playbackRate = e.target.outerText;
         speed = e.target.outerText;
+        document.querySelector("video").playbackRate = e.target.outerText;
     });
 });
 
