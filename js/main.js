@@ -12,6 +12,7 @@ speedPoints.map(
 document.body.prepend(buttons);
 
 const ryletdBtns = document.querySelectorAll(".ryletd__button");
+let speed = 1;
 
 document.querySelectorAll(".ryletd__button").forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -20,11 +21,18 @@ document.querySelectorAll(".ryletd__button").forEach((btn) => {
 
         btn.classList.add("ryletd__active");
         document.querySelector("video").playbackRate = e.target.outerText;
+        speed = e.target.outerText;
     });
 });
 
+// Autochange video speed when video changed
+document.addEventListener("DOMSubtreeModified", (e) => {
+    if (e.target.id === "movie_player")
+        e.target.querySelector("video").playbackRate = speed;
+});
+
 // Choose the best quality on backquote key
-document.body.addEventListener("keydown", (e) => {
+document.addEventListener("keydown", (e) => {
     if (e.keyCode === 192) {
         setTimeout(() => {
             document.querySelector(".ytp-button.ytp-settings-button").click();
