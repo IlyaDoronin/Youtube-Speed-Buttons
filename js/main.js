@@ -4,12 +4,18 @@ const speedPoints = ["1", "1.5", "2", "2.5", "3", "3.5", "4", "5"];
 let buttons = document.createElement("main");
 buttons.className = "ryletd__buttons";
 
+// Показатель текущей скорости видео
+const currentSpeed = document.createElement("div");
+currentSpeed.className = "ryletd__currentspeed";
+currentSpeed.innerHTML = "1";
+
 speedPoints.map(
     (point) =>
         (buttons.innerHTML += `<button class="ryletd__button">${point}</button>`)
 );
 
 document.body.prepend(buttons);
+document.body.prepend(currentSpeed);
 
 const ryletdBtns = document.querySelectorAll(".ryletd__button");
 let speed = 1;
@@ -21,6 +27,7 @@ document.querySelectorAll(".ryletd__button").forEach((btn) => {
 
         btn.classList.add("ryletd__active");
         speed = e.target.outerText;
+        currentSpeed.innerHTML = speed;
         document.querySelector("video").playbackRate = e.target.outerText;
     });
 });
