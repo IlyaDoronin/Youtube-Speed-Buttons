@@ -33,9 +33,19 @@ document.querySelectorAll(".ryletd__button").forEach((btn) => {
 });
 
 // Autochange video speed when video changed
-document.addEventListener("DOMSubtreeModified", (e) => {
-    if (e.target.id === "movie_player")
-        e.target.querySelector("video").playbackRate = speed;
+// document.addEventListener("DOMSubtreeModified", (e) => {
+//     if (e.target.id === "movie_player")
+//         e.target.querySelector("video").playbackRate = speed;
+// });
+const observer = new MutationObserver((e) => {
+    e.forEach(({ target }) => {
+        if (target.id === "movie_player")
+            target.querySelector("video").playbackRate = speed;
+    });
+});
+observer.observe(document, {
+    childList: true,
+    subtree: true,
 });
 
 // Choose the best quality on backquote key
