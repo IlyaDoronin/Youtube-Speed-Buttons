@@ -49,22 +49,28 @@ observer.observe(document, {
 });
 
 // Choose the best quality on backquote key
-document.addEventListener("keydown", (e) => {
-    if (e.keyCode === 192) {
-        setTimeout(() => {
-            document.querySelector(".ytp-button.ytp-settings-button").click();
-        }, 0);
+const setBestQuality = () => {
+    setTimeout(() => {
+        document.querySelector(".ytp-button.ytp-settings-button").click();
+    }, 0);
 
-        const items = document
-            .querySelector(".ytp-panel-menu")
-            .querySelectorAll(".ytp-menuitem");
+    const items = document
+        .querySelector(".ytp-panel-menu")
+        .querySelectorAll(".ytp-menuitem");
 
-        items[--items.length].click();
+    items[--items.length].click();
 
-        document
-            .querySelector(".ytp-panel-menu")
-            .querySelector(".ytp-menuitem")
-            .click();
-        setTimeout(() => document.body.click(), 0);
-    }
+    document
+        .querySelector(".ytp-panel-menu")
+        .querySelector(".ytp-menuitem")
+        .click();
+    setTimeout(() => document.body.click(), 0);
+};
+
+buttons.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    // Три раза, потому что с одного не всегда срабатывает
+    setBestQuality();
+    setBestQuality();
+    setBestQuality();
 });
