@@ -58,7 +58,7 @@ const setBestQuality = () => {
         .querySelector(".ytp-panel-menu")
         .querySelectorAll(".ytp-menuitem");
 
-    items[--items.length].click();
+    items[items.length - 1].click();
 
     document
         .querySelector(".ytp-panel-menu")
@@ -69,8 +69,5 @@ const setBestQuality = () => {
 
 buttons.addEventListener("contextmenu", (e) => {
     e.preventDefault();
-    // Три раза, потому что с одного не всегда срабатывает
-    setBestQuality();
-    setBestQuality();
     setBestQuality();
 });
