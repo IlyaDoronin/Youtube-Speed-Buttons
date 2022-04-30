@@ -21,14 +21,14 @@ const ryletdBtns = document.querySelectorAll(".ryletd__button");
 let speed = 1;
 
 document.querySelectorAll(".ryletd__button").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
+    btn.addEventListener("click", ({ target }) => {
         // Удаление класса ryletd__active у всех кнопок
         ryletdBtns.forEach((item) => item.classList.remove("ryletd__active"));
 
         btn.classList.add("ryletd__active");
-        speed = e.target.outerText;
+        speed = target.outerText;
         currentSpeed.innerHTML = speed;
-        document.querySelector("video").playbackRate = e.target.outerText;
+        document.querySelector("video").playbackRate = target.outerText;
     });
 });
 
@@ -70,4 +70,22 @@ const setBestQuality = () => {
 buttons.addEventListener("contextmenu", (e) => {
     e.preventDefault();
     setBestQuality();
+});
+
+buttons.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    ryletdBtns.forEach((item) => item.classList.remove("ryletd__active"));
+
+    const video = document.querySelector("video");
+    if (video && e.deltaY > 0) {
+        const videoSpeed = video.playbackRate;
+        video.playbackRate = (videoSpeed - 0.1).toFixed(1);
+        speed = video.playbackRate;
+        currentSpeed.innerHTML = speed;
+    } else {
+        const videoSpeed = video.playbackRate;
+        video.playbackRate = (videoSpeed + 0.1).toFixed(1);
+        speed = video.playbackRate;
+        currentSpeed.innerHTML = speed;
+    }
 });
