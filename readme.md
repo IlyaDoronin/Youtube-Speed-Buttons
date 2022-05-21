@@ -10,22 +10,22 @@
 
     Клик по кнопке
 
-![click](https://api.ryletd.ru/files/youtubeSpeedButtons/click.png)
+![click](https://i.imgur.com/i9Vq3Oj.png)
 
 ### Способ 2
 
     Скролл в любой части панели (Вверх/вниз)
 
-![scroll](https://api.ryletd.ru/files/youtubeSpeedButtons/scroll.png)
+![scroll](https://i.imgur.com/ltNIzPd.png)
 
 ## **Текущая скорость видео**
 
     Отображается справа вверху
 
-![currentSpeed](https://api.ryletd.ru/files/youtubeSpeedButtons/currentSpeed.png)
+![currentSpeed](https://i.imgur.com/8JXvzGv.png)
 
 ## **Изменение качества видео**
 
     Правый клик в любой части панели изменяет качество видео на максимальное
 
-![quality](https://api.ryletd.ru/files/youtubeSpeedButtons/quality.png)
+![quality](https://i.imgur.com/2l1x7Eq.png)
