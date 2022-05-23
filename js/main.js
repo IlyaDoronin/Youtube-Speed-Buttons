@@ -28,15 +28,13 @@ document.querySelectorAll(".ryletd__button").forEach((btn) => {
         btn.classList.add("ryletd__active");
         speed = target.outerText;
         currentSpeed.innerHTML = speed;
-        document.querySelector("video").playbackRate = target.outerText;
+        document
+            .querySelectorAll("video")
+            .forEach((video) => (video.playbackRate = target.outerText));
     });
 });
 
 // Autochange video speed when video changed
-// document.addEventListener("DOMSubtreeModified", (e) => {
-//     if (e.target.id === "movie_player")
-//         e.target.querySelector("video").playbackRate = speed;
-// });
 const observer = new MutationObserver((e) => {
     e.forEach(({ target }) => {
         if (target.id === "movie_player")
@@ -76,16 +74,17 @@ buttons.addEventListener("wheel", (e) => {
     e.preventDefault();
     ryletdBtns.forEach((item) => item.classList.remove("ryletd__active"));
 
-    const video = document.querySelector("video");
-    if (video && e.deltaY > 0) {
-        const videoSpeed = video.playbackRate;
-        video.playbackRate = (videoSpeed - 0.1).toFixed(1);
-        speed = video.playbackRate;
-        currentSpeed.innerHTML = speed;
-    } else {
-        const videoSpeed = video.playbackRate;
-        video.playbackRate = (videoSpeed + 0.1).toFixed(1);
-        speed = video.playbackRate;
-        currentSpeed.innerHTML = speed;
-    }
+    document.querySelectorAll("video").forEach((video) => {
+        if (video && e.deltaY > 0) {
+            const videoSpeed = video.playbackRate;
+            video.playbackRate = (videoSpeed - 0.1).toFixed(1);
+            speed = video.playbackRate;
+            currentSpeed.innerHTML = speed;
+        } else {
+            const videoSpeed = video.playbackRate;
+            video.playbackRate = (videoSpeed + 0.1).toFixed(1);
+            speed = video.playbackRate;
+            currentSpeed.innerHTML = speed;
+        }
+    });
 });
