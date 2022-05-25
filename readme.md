@@ -1,6 +1,6 @@
 # Установка
 
-[**Быстрая установка**](https://ryletd.ru/code/youtubeSpeedButtons)
+[**Быстрая установка**](https://gist.github.com/IlyaDoronin/489c29990c419031f0230b707dec56f8/raw/YoutubeSpeedButtons.user.js)
 
 # **Функционал**
 
