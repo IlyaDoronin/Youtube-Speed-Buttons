@@ -1,6 +1,12 @@
 # Установка
 
-[**Быстрая установка**](https://gist.github.com/IlyaDoronin/489c29990c419031f0230b707dec56f8/raw/YoutubeSpeedButtons.user.js)
+Сначала нужно установить
+[**Tampermonkey**](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
+или
+[**Violentmonkey**](https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag)
+
+После чего установить
+[**Скрипт**](https://gist.github.com/IlyaDoronin/489c29990c419031f0230b707dec56f8/raw/YoutubeSpeedButtons.user.js)
 
 # **Функционал**
 
